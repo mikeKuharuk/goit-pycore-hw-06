@@ -29,7 +29,7 @@ print(john)  # Print: Contact name: John, phones: 1112223333; 5555555555
 
 # Search for specific phone number John
 found_phone = john.find_phone("5555555555")
-print(f"{john.name}: {found_phone}")  # Виведення: 5555555555
+print(f"{john.name}: {found_phone}")  # Print: 5555555555
 
 # Removing Jane from book
 book.delete("Jane")
