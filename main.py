@@ -8,6 +8,8 @@ book = AddressBook()
 john_record = Record("John")
 john_record.add_phone("1234567890")
 john_record.add_phone("5555555555")
+# Trying to add duplicate
+john_record.add_phone("5555555555")
 
 # Adding John to book
 book.add_record(john_record)
