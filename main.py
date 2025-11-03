@@ -10,6 +10,7 @@ john_record.add_phone("1234567890")
 john_record.add_phone("5555555555")
 # Trying to add duplicate
 john_record.add_phone("5555555555")
+john_record.add_phone("5555555555")
 
 # Adding John to book
 book.add_record(john_record)
@@ -27,6 +28,8 @@ for name, record in book.data.items():
 john = book.find("John")
 john.edit_phone("1234567890", "1112223333")
 
+print(john)  # Print: Contact name: John, phones: 1112223333; 5555555555
+john.edit_phone("1234567890", "111222ssss")
 print(john)  # Print: Contact name: John, phones: 1112223333; 5555555555
 
 # Search for specific phone number John

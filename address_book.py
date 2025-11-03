@@ -30,21 +30,20 @@ class Record:
         self.phones = []
 
     def add_phone(self, phone: str):
-        for p in self.phones:
-            if p.value == phone:
-                # Phone already added
-                return
-        self.phones.append(Phone(phone))
+        match_phone = self.find_phone(phone)
+        if match_phone is None:
+            self.phones.append(Phone(phone))
 
     def remove_phone(self, phone):
-        for p in self.phones:
-            if p.value == phone:
-                self.phones.remove(p)
+        match_phone = self.find_phone(phone)
+        if match_phone:
+                self.phones.remove(phone)
 
     def edit_phone(self, phone, new_phone):
-        for p in self.phones:
-            if p.value == phone:
-                p.value = new_phone
+        match_phone = self.find_phone(phone)
+        if match_phone:
+            index = self.phones.index(match_phone)
+            self.phones[index] = Phone(new_phone)
 
     def find_phone(self, target_phone):
         for phone in self.phones:
